@@ -9,6 +9,8 @@ module.exports = async function (context, req, inputDocument) {
     }
 
     context.res = {
-        body: message
+        body: {
+            message
+        }
     };
 }

@@ -5,15 +5,17 @@ async function displayQuote() {
   try {
     // Fetch quote object from API
     let randomNumber = Math.floor(Math.random() * (10 - 1) + 1);
-    let quoteResponse = await fetch('/api/quote?id='+randomNumber+"&partitionKeyValue="+randomNumber);
-    quote = await quoteResponse.json();
+    let response = await fetch('/api/quote?id='+randomNumber+"&partitionKeyValue="+randomNumber);
+    quote = await response.json();
 
-    // Fetch image object from API
-    image = await fetch('/api/image');
     // Preload image
-    image = URL.createObjectURL(image);
+    response = await fetch('/api/image');
+    let jsonRsp = await response.json();
+    image = await fetch(jsonRsp.image);
+    const blob = await image.blob();
+    image = URL.createObjectURL(blob);
   } catch (error) {
-    quote = { text: `Could not get quote: ${error.message}` };
+    quote = `Could not get quote: ${error.message}`;
   }
 
   // Update background image

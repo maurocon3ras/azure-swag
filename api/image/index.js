@@ -18,6 +18,8 @@ module.exports = async function (context, req) {
   let image = await getImage();
 
   context.res = {
-    body: image
+    body: {
+      image
+    }
   };
 };
