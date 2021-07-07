@@ -21,7 +21,3 @@ async function displayQuote() {
   const div = document.getElementById('quote');
   div.textContent = quote.text;
 }
-
-setInterval(() => {
-  displayQuote();
-}, 5000)
