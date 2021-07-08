@@ -21,7 +21,7 @@
       "name": "inputDocument",
       "databaseName": "swademo",
       "collectionName": "quotes",
-      "connectionStringSetting": "swademo_DOCUMENTDB",
+      "connectionStringSetting": "AccountEndpoint=https://swademo.documents.azure.com:443/;AccountKey=DaRgwxTeGmBeA7Jgq72VfIXnwajM7wV1ecEatdRiwqPLuCNkf3rbBTAnWSaU349iadpm8bpmbwyLT8LzPbmyeA==;",
       "id": "{Query.id}",
       "partitionKey": "{Query.partitionKeyValue}"
     }
