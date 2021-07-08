@@ -26,4 +26,6 @@ async function displayQuote() {
   div.textContent = quote.message;
 }
 
-displayQuote();
+setInterval(() => {
+  displayQuote();
+}, 5000)
